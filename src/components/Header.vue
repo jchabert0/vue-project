@@ -4,6 +4,7 @@ defineProps<{
 
 import { getCategories } from "@/functions/getCategories";
 import { getProducts } from "@/functions/getProducts";
+import { noResults } from "@/functions/noResults";
 
 fetch(`https://api.escuelajs.co/api/v1/categories`)
     .then((response) => {
