@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Header from './components/Header.vue';
-import Name from './components/Name.vue';
+import Categories from './components/Categories.vue';
+import Search from './components/Search.vue';
 import Prices from './components/Prices.vue';
 import Products from './components/Products.vue';
 import Title from './components/Title.vue';
@@ -8,13 +8,13 @@ import Title from './components/Title.vue';
 
 <template>
   <main>
-    <Header />
+    <Categories />
     <section class="search">
       <div class="container">
         <Title title="Home" />
         <div class="grid">
           <div class="col-12 col-lg-6">
-            <Name name="titleSearch" type="text" class="title" />
+            <Search name="titleSearch" type="text" class="title" />
           </div>
           <div class="col-12 col-lg-6">
             <Prices name="priceMax" type="range" class="slider" id="slider-value" />

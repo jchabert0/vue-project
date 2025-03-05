@@ -8,7 +8,7 @@ defineProps<{
     class: string
 }>()
 
-const title = (id: string) => {
+const search = (id: string) => {
     const value = document.querySelector(`#${id}`).value
     fetch(`https://api.escuelajs.co/api/v1/products`)
         .then((response) => {
@@ -28,7 +28,7 @@ const title = (id: string) => {
 <template>
     <form>
         <label :for="name">Rechercher par nom:</label>
-        <input :type="type" :id="name" :name="name" :class="class" @input="title(name)" />
+        <input :type="type" :id="name" :name="name" :class="class" @input="search(name)" />
     </form>
 </template>
 
