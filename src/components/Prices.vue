@@ -44,7 +44,7 @@ const prices = (id: string) => {
 <template>
     <form>
         <label :for="name">Rechercher par prix maximum:</label>
-        <input :type="type" :id="name" :name="name" :class="class" @change="prices(name)" />
+        <input :type="type" :id="name" :name="name" :class="class" @input="prices(name)" />
         <span :id="id"></span>
     </form>
 </template>

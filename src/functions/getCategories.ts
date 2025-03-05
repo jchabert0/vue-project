@@ -3,13 +3,13 @@ export const getCategories = (data: Array<object>) => {
     const categories = data;
     document.querySelector('header').innerHTML = 
     ` <div class="container">
-        <button class="category active" data-id="">
+        <button class="category all active" data-id="">
            All
         </button>
      ${Object.keys(categories).map((key) => {
         const category = categories[key]
         return `
-        <button class="category" data-id="${category.id}">
+        <button class="category getCategory" data-id="${category.id}">
             ${category.name}
         </button>
     `

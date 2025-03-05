@@ -12,7 +12,7 @@ fetch(`https://api.escuelajs.co/api/v1/categories`)
     })
     .then((data) => {
         getCategories(data)
-        document.querySelectorAll('.category').forEach(category => {
+        document.querySelectorAll('.getCategory').forEach(category => {
             category.addEventListener('click', () => {
                 const categoryID = Number(category.dataset.id)
                 fetch(`https://api.escuelajs.co/api/v1/products`)
@@ -27,6 +27,18 @@ fetch(`https://api.escuelajs.co/api/v1/categories`)
                         console.log(error);
                     });
             });
+        });
+        document.querySelector('.all')?.addEventListener('click', () => {
+            fetch(`https://api.escuelajs.co/api/v1/products`)
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    getProducts(data)
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
         });
     }).catch(function (error) {
         console.log(error);
