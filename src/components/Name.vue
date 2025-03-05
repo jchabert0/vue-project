@@ -3,19 +3,19 @@ import { getProducts } from '@/functions/getProducts';
 import { noResults } from '@/functions/noResults';
 
 defineProps<{
-    name: String
-    type: String
-    class: String
+    name: string
+    type: string
+    class: string
 }>()
 
-const title = (id: String) => {
+const title = (id: string) => {
     const value = document.querySelector(`#${id}`).value
     fetch(`https://api.escuelajs.co/api/v1/products`)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-            const result = data.filter((thisProduct: Object) => thisProduct.title.includes(value));
+            const result = data.filter((thisProduct: object) => thisProduct.title.includes(value));
             result.length === 0 ? noResults('grid-products') : getProducts(result)
         })
         .catch(function (error) {

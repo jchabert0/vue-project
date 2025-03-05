@@ -1,8 +1,8 @@
-export const getPrices = (data: Array<Object>) => {
-let ancientPrices = []
+export const getPrices = (data: Array<object>) => {
+const ancientPrices = []
 let finalPrices = []
 let prices = []
-data.map(function (el: Object) {
+data.map(function (el: object) {
     ancientPrices.push(el.price)
     finalPrices = [...new Set(ancientPrices)];
 })

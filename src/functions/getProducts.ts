@@ -1,4 +1,4 @@
-export const getProducts = (data: Array<Object>) => {
+export const getProducts = (data: Array<object>) => {
     const products = data
 
     document.querySelector('#grid-products').innerHTML = ''

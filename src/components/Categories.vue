@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
 defineProps<{
-    class: String
-    id: String
+    class: string
+    id: string
 }>()
 
 import { getCategories } from "@/functions/getCategories";

@@ -3,11 +3,11 @@ import { getProducts } from '@/functions/getProducts';
 import { noResults } from '@/functions/noResults';
 
 defineProps<{
-    btn: String
-    id: String
+    btn: string
+    id: string
 }>()
 
-const filter = (id: String) => {
+const filter = (id: string) => {
     const categoryID = Number(document.querySelector(`#${id}`)?.dataset.id)
     const priceMin = Number(document.querySelector(`#${id}`)?.dataset.pricemin)
     const priceMax = Number(document.querySelector(`#${id}`)?.dataset.pricemax)

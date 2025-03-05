@@ -2,8 +2,8 @@
 import { getProducts } from '@/functions/getProducts';
 
 defineProps<{
-    class: String
-    id: String
+    class: string
+    id: string
 }>()
 
 fetch('https://api.escuelajs.co/api/v1/products')

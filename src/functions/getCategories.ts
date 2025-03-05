@@ -1,5 +1,5 @@
 
-export const getCategories = (data: Array<Object>) => {
+export const getCategories = (data: Array<object>) => {
     const categories = data;
     document.querySelector('header').innerHTML = 
     ` <div class="container">

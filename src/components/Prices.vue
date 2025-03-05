@@ -4,10 +4,10 @@ import { getProducts } from '@/functions/getProducts';
 import { noResults } from '@/functions/noResults';
 
 defineProps<{
-    name: String
-    type: String
-    class: String
-    id: String
+    name: string
+    type: string
+    class: string
+    id: string
 }>()
 
 fetch('https://api.escuelajs.co/api/v1/products/')
@@ -21,7 +21,7 @@ fetch('https://api.escuelajs.co/api/v1/products/')
         console.log(error);
     });
 
-const prices = (id: String) => {
+const prices = (id: string) => {
     const value = Number(document.querySelector(`#${id}`)?.value)
     document.querySelector(`#slider-value`).innerHTML = ''
     document.querySelector(`#slider-value`).innerHTML = `${value}€`
@@ -31,7 +31,7 @@ const prices = (id: String) => {
             return response.json();
         })
         .then((data) => {
-            const result = data.filter((thisProduct: Object) => thisProduct.price <= value);
+            const result = data.filter((thisProduct: object) => thisProduct.price <= value);
             result.length === 0 ? noResults('grid-products') : getProducts(result)
         })
         .catch(function (error) {
