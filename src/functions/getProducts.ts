@@ -31,20 +31,26 @@ export const getProducts = (data: Array<object>) => {
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--black-color)"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
     </button>
     <div class="modal-content container ">
-<h2>Details</h2>
-<div class="slider-wrapper" data-images="wrapper">
-<ul class="slides-container">
-                ${Object.keys(product.images).map((key) => {
-                const image = product.images[key]
-                    return `<li class="slide">
+
+<div class="grid">
+<div class="col-12 col-lg-6">
+        <div class="slider-wrapper" data-images="wrapper">
+        <ul class="slides-container">
+                        ${Object.keys(product.images).map((key) => {
+                        const image = product.images[key]
+                            return `<li class="slide">
                     <img src="${image}" alt="${image}" height="400" id="${image}" />
                     </li>`
                 }).join('')}
                 </ul>
                 </div>
+    </div>
+<div class="col-12 col-lg-6">
                 <h3>${product.price}€</h3>
                 <h4>${product.title}</h4>
       <p>${product.description}</p>
+    </div>
+    </div>
     </div>
   </div>
             </article>

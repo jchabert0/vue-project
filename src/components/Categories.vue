@@ -14,14 +14,16 @@ fetch(`https://api.escuelajs.co/api/v1/categories`)
         getCategories(data)
         document.querySelectorAll('.category').forEach(category => {
             category.addEventListener('click', () => {
-                const categoryID = category.dataset.id
-                fetch(`https://api.escuelajs.co/api/v1/products/?categoryId=${categoryID}`)
+                const categoryID = Number(category.dataset.id)
+                fetch(`https://api.escuelajs.co/api/v1/products`)
                     .then((response) => {
                         return response.json();
                     })
                     .then((data) => {
-                        data.length === 0 ? noResults('grid-products') : getProducts(data)
-                    }).catch(function (error) {
+                        const results = data.filter((product: object) => product.category.id === categoryID)
+                        results.length === 0 ? noResults('grid-products') : getProducts(results)
+                    })
+                    .catch(function (error) {
                         console.log(error);
                     });
             });

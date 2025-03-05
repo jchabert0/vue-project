@@ -9,14 +9,14 @@ defineProps<{
 }>()
 
 const search = (id: string) => {
-    const value = document.querySelector(`#${id}`).value
+    const value = document.querySelector(`#${id}`)?.value
     fetch(`https://api.escuelajs.co/api/v1/products`)
         .then((response) => {
             return response.json();
         })
         .then((data) => {
-            const result = data.filter((thisProduct: object) => thisProduct.title.includes(value));
-            result.length === 0 ? noResults('grid-products') : getProducts(result)
+            const results = data.filter((product: object) => product.title.includes(value));
+            results.length === 0 ? noResults('grid-products') : getProducts(results)
         })
         .catch(function (error) {
             console.log(error);

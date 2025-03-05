@@ -60,12 +60,6 @@ article.product .close-modal {
     justify-content: center;
 }
 
-article.product .modal-content h2 {
-    margin-top: 0;
-    margin-bottom: 24px;
-    font-size: 30px;
-}
-
 article.product .modal-content img {
     object-fit: contain;
 }
