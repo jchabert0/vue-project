@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getProducts } from '@/functions/getProducts';
+import { getResult } from '@/functions/getResult';
 
 defineProps<{
     class: string
@@ -13,6 +14,7 @@ fetch('https://api.escuelajs.co/api/v1/products')
     .then((data) => {
         console.log(data)
         getProducts(data)
+        getResult('result', data)
     })
     .catch(function (error) {
         console.log(error);

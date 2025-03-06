@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { getPrices } from '@/functions/getPrices';
 import { getProducts } from '@/functions/getProducts';
+import { getResult } from '@/functions/getResult';
 import { noResults } from '@/functions/noResults';
 
 defineProps<{
@@ -28,8 +29,9 @@ const prices = (id: string) => {
             return response.json();
         })
         .then((data) => {
-            const result = data.filter((thisProduct: object) => thisProduct.price <= value);
-            result.length === 0 ? noResults('grid-products') : getProducts(result)
+            const results = data.filter((thisProduct: object) => thisProduct.price <= value);
+            results.length === 0 ? noResults('grid-products') : getProducts(results)
+            getResult('result', results)
         })
         .catch(function (error) {
             console.log(error);

@@ -5,6 +5,7 @@ import Prices from './components/Prices.vue';
 import Products from './components/Products.vue';
 import Title from './components/Title.vue';
 import Sort from './components/Sort.vue';
+import Result from './components/Result.vue';
 </script>
 
 <template>
@@ -25,7 +26,10 @@ import Sort from './components/Sort.vue';
     </section>
     <section class="products">
       <div class="container">
-        <Sort id="sort" />
+        <div class="sort">
+          <Sort id="sort" />
+          <Result id="result" />
+        </div>
         <Products class="grid" id="grid-products" />
       </div>
     </section>
@@ -35,5 +39,12 @@ import Sort from './components/Sort.vue';
 <style scoped>
 .search .grid {
   grid-gap: 60px;
+}
+
+.sort {
+  padding-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 </style>

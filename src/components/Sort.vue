@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getProducts } from '@/functions/getProducts';
+import { getResult } from '@/functions/getResult';
 import { noResults } from '@/functions/noResults';
 
 defineProps<{
@@ -13,17 +14,18 @@ const select = (id: String) => {
         })
         .then((data) => {
             const value = document.querySelector(`#${id}`)?.value
-            let result = data
+            let results = data
             if (value === "publication") {
-                result = data.sort((a: Date, b: Date) => new Date(a.creationAt).getTime() - new Date(b.creationAt).getTime())
+                results = data.sort((a: Date, b: Date) => new Date(a.creationAt).getTime() - new Date(b.creationAt).getTime())
             } else if (value === "update") {
-                result = data.sort((a: Date, b: Date) => new Date(b.creationAt).getTime() - new Date(a.creationAt).getTime())
+                results = data.sort((a: Date, b: Date) => new Date(b.creationAt).getTime() - new Date(a.creationAt).getTime())
             } else if (value === "ascending") {
-                result = data.sort((a: Number, b: Number) => a.price - b.price);
+                results = data.sort((a: Number, b: Number) => a.price - b.price);
             } else if (value === "descending") {
-                result = data.sort((a: Number, b: Number) => b.price - a.price);
+                results = data.sort((a: Number, b: Number) => b.price - a.price);
             }
-            result.length === 0 ? noResults('grid-products') : getProducts(result)
+            results.length === 0 ? noResults('grid-products') : getProducts(results)
+            getResult('result', results)
         })
         .catch(function (error) {
             console.log(error);
@@ -46,7 +48,8 @@ const select = (id: String) => {
 </template>
 
 <style scoped>
-form {
-    padding-bottom: 24px;
+label {
+    font-size: 18px;
+    color: var(--black-color);
 }
 </style>

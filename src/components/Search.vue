@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getProducts } from '@/functions/getProducts';
+import { getResult } from '@/functions/getResult';
 import { noResults } from '@/functions/noResults';
 
 defineProps<{
@@ -17,6 +18,7 @@ const search = (id: string) => {
         .then((data) => {
             const results = data.filter((product: object) => product.title.includes(value));
             results.length === 0 ? noResults('grid-products') : getProducts(results)
+            getResult('result', results)
         })
         .catch(function (error) {
             console.log(error);

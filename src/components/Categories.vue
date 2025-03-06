@@ -4,6 +4,7 @@ defineProps<{
 
 import { getCategories } from "@/functions/getCategories";
 import { getProducts } from "@/functions/getProducts";
+import { getResult } from "@/functions/getResult";
 import { noResults } from "@/functions/noResults";
 
 fetch(`https://api.escuelajs.co/api/v1/categories`)
@@ -22,6 +23,7 @@ fetch(`https://api.escuelajs.co/api/v1/categories`)
                     .then((data) => {
                         const results = data.filter((product: object) => product.category.id === categoryID)
                         results.length === 0 ? noResults('grid-products') : getProducts(results)
+                        getResult('result', results)
                     })
                     .catch(function (error) {
                         console.log(error);
@@ -35,6 +37,7 @@ fetch(`https://api.escuelajs.co/api/v1/categories`)
                 })
                 .then((data) => {
                     getProducts(data)
+                    getResult('result', data)
                 })
                 .catch(function (error) {
                     console.log(error);
