@@ -11,6 +11,7 @@ fetch('https://api.escuelajs.co/api/v1/products')
         return response.json();
     })
     .then((data) => {
+        console.log(data)
         getProducts(data)
     })
     .catch(function (error) {

@@ -23,9 +23,6 @@ fetch('https://api.escuelajs.co/api/v1/products/')
 
 const prices = (id: string) => {
     const value = Number(document.querySelector(`#${id}`)?.value)
-    document.querySelector(`#slider-value`).innerHTML = ''
-    document.querySelector(`#slider-value`).innerHTML = `${value}€`
-
     fetch('https://api.escuelajs.co/api/v1/products/')
         .then((response) => {
             return response.json();
@@ -39,12 +36,18 @@ const prices = (id: string) => {
         });
 }
 
+const write = (id: string) => {
+    const value = Number(document.querySelector(`#${id}`)?.value)
+    document.querySelector(`#slider-value`).innerHTML = ''
+    document.querySelector(`#slider-value`).innerHTML = `${value}€`
+}
+
 </script>
 
 <template>
     <form>
         <label :for="name">Rechercher par prix maximum:</label>
-        <input :type="type" :id="name" :name="name" :class="class" @input="prices(name)" />
+        <input :type="type" :id="name" :name="name" :class="class" @change="prices(name)" @input="write(name)" />
         <span :id="id"></span>
     </form>
 </template>

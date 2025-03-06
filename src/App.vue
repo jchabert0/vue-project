@@ -4,6 +4,7 @@ import Search from './components/Search.vue';
 import Prices from './components/Prices.vue';
 import Products from './components/Products.vue';
 import Title from './components/Title.vue';
+import Sort from './components/Sort.vue';
 </script>
 
 <template>
@@ -11,7 +12,7 @@ import Title from './components/Title.vue';
     <Categories />
     <section class="search">
       <div class="container">
-        <Title title="Home" />
+        <Title title="Work in progress" />
         <div class="grid">
           <div class="col-12 col-lg-6">
             <Search name="titleSearch" type="text" class="title" />
@@ -24,6 +25,7 @@ import Title from './components/Title.vue';
     </section>
     <section class="products">
       <div class="container">
+        <Sort id="sort" />
         <Products class="grid" id="grid-products" />
       </div>
     </section>
