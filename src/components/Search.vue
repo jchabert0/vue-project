@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { checkCategory } from '@/functions/checkCategfory';
 import { getProducts } from '@/functions/getProducts';
 import { getResult } from '@/functions/getResult';
 import { noResults } from '@/functions/noResults';
@@ -11,7 +12,10 @@ defineProps<{
 
 const search = (id: string) => {
     const value = document.querySelector(`#${id}`)?.value
-    fetch(`https://api.escuelajs.co/api/v1/products`)
+    let url = `https://api.escuelajs.co/api/v1/products`
+    const category = document.querySelector('html')?.dataset.category
+    if (!!category) url = `https://api.escuelajs.co/api/v1/products/?categoryId=${category}`
+    fetch(url)
         .then((response) => {
             return response.json();
         })

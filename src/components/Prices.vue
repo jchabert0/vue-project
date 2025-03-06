@@ -24,7 +24,10 @@ fetch('https://api.escuelajs.co/api/v1/products/')
 
 const prices = (id: string) => {
     const value = Number(document.querySelector(`#${id}`)?.value)
-    fetch('https://api.escuelajs.co/api/v1/products/')
+    let url = `https://api.escuelajs.co/api/v1/products`
+    const category = document.querySelector('html')?.dataset.category
+    if (!!category) url = `https://api.escuelajs.co/api/v1/products/?categoryId=${category}`
+    fetch(url)
         .then((response) => {
             return response.json();
         })
