@@ -37,23 +37,4 @@ const search = (id: string) => {
     </form>
 </template>
 
-<style scoped>
-label {
-    color: var(--black-color);
-    padding-bottom: 6px;
-    display: block;
-}
-
-input {
-    padding-top: 6px;
-    padding-bottom: 6px;
-    padding-left: 12px;
-    padding-right: 12px;
-    width: 100%;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--black-color);
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-}
-</style>
+<style scoped></style>

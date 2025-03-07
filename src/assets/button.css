@@ -1,0 +1,57 @@
+button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: var(--white-color);
+    color: var(--black-color);
+}
+
+button.primary {
+    position: relative;
+    color: var(--black-color);
+}
+
+button.primary:before {
+    background: var(--black-color);
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    -webkit-transition: width .2 ease;
+    transition: width .2s ease;
+    width: 0;
+}
+
+button.primary.active::before {
+    width: 100%;
+}
+
+button.secondary {
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--black-color);
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    padding-right: 12px;
+    padding-left: 12px;
+    -webkit-transition: color .2 ease;
+    transition: color .2s ease;
+}
+
+@media (hover: hover) {
+    button:hover {
+        cursor: pointer;
+    }
+
+    button.primary:hover:before {
+        width: 100%;
+    }
+
+    button.secondary:hover {
+        background: var(--black-color);
+        color: var(--white-color);
+    }
+}

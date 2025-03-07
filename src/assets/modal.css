@@ -1,0 +1,58 @@
+html.open {
+    overflow: hidden;
+    position: relative;
+}
+
+html.open::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: var(--black-color);
+    z-index: 2;
+    opacity: .8;
+}
+
+.modal {
+    -webkit-transition: transform .2s ease;
+    transition: transform .2s ease;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 20%;
+    left: 0;
+    background: var(--white-color);
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    overflow-y: overlay;
+}
+
+.modal:not(.open) {
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+
+.modal-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: var(--black-color) !important;
+    background: var(--white-color);
+    border-radius: 100px;
+    display: flex;
+    height: 40px;
+    width: 40px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}

@@ -59,50 +59,7 @@ const write = (id: string) => {
 
 <style scoped>
 form {
-    position: relative;
     width: 90%;
-}
-
-.slider {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 1px;
-    background: var(--black-color);
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-}
-
-.slider:hover {
-    opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 25px;
-    height: 25px;
-    background: var(--white-color);
-    -webkit-border-radius: 100px;
-    border-radius: 100px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--primary-color);
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: var(--primary-color);
-    cursor: pointer;
-}
-
-label {
-    padding-bottom: 6px;
-    display: block;
-    color: var(--black-color);
 }
 
 span {

@@ -65,31 +65,7 @@ header {
     border-bottom-color: var(--system-color);
 }
 
-button.category {
-    position: relative;
-    color: var(--black-color);
-    background: var(--white-color);
-    cursor: pointer;
-    border: none;
-    padding-right: 0;
-    padding-left: 0;
-    margin-right: 24px;
-}
-
-button.category:before {
-    background: var(--black-color);
-    bottom: 0;
-    content: "";
-    height: 1px;
-    left: 0;
-    position: absolute;
-    -webkit-transition: width .2 ease;
-    transition: width .2s ease;
-    width: 0;
-}
-
-button.category.active::before,
-button.category:hover:before {
-    width: 100%;
+header button {
+    margin-right: 16px;
 }
 </style>

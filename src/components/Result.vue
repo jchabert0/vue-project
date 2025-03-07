@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-    id: String
+    id: string
 }>()
 </script>
 
@@ -9,12 +9,12 @@ defineProps<{
 </template>
 
 <style scoped>
-h3 {
+span {
+    margin-top: 0;
+    margin-bottom: 18px;
+    margin-right: 4px;
     font-size: 18px;
     color: var(--black-color);
-}
-
-span {
-    padding-right: 4px;
+    font-weight: 900;
 }
 </style>

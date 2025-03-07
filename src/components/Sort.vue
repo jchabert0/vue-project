@@ -4,10 +4,10 @@ import { getResult } from '@/functions/getResult';
 import { noResults } from '@/functions/noResults';
 
 defineProps<{
-    id: String
+    id: string
 }>()
 
-const select = (id: String) => {
+const select = (id: string) => {
     let url = `https://api.escuelajs.co/api/v1/products`
     const category = document.querySelector('html')?.dataset.category
     if (!!category) url = `https://api.escuelajs.co/api/v1/products/?categoryId=${category}`
@@ -23,9 +23,9 @@ const select = (id: String) => {
             } else if (value === "update") {
                 results = data.sort((a: Date, b: Date) => new Date(b.creationAt).getTime() - new Date(a.creationAt).getTime())
             } else if (value === "ascending") {
-                results = data.sort((a: Number, b: Number) => a.price - b.price);
+                results = data.sort((a: number, b: number) => a.price - b.price);
             } else if (value === "descending") {
-                results = data.sort((a: Number, b: Number) => b.price - a.price);
+                results = data.sort((a: number, b: number) => b.price - a.price);
             }
             results.length === 0 ? noResults('grid-products') : getProducts(results)
             getResult('result', results)
@@ -50,9 +50,4 @@ const select = (id: String) => {
     </form>
 </template>
 
-<style scoped>
-label {
-    font-size: 18px;
-    color: var(--black-color);
-}
-</style>
+<style scoped></style>

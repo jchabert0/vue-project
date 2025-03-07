@@ -10,9 +10,6 @@ defineProps<{
 
 <style scoped>
 h1 {
-    margin-top: 0;
-    margin-bottom: 24px;
     text-align: center;
-    font-size: 24px;
 }
 </style>

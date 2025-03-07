@@ -1,3 +1,11 @@
+@import './aside.css';
+@import './button.css';
+@import './form.css';
+@import './image.css';
+@import './modal.css';
+@import './slider.css';
+@import './title.css';
+
 /* ROOT */
 :root {
   --primary-color: #1C74DC;

@@ -1,4 +1,4 @@
-export const getResult = (id: String, data: Array<Object>) => {
+export const getResult = (id: string, data: Array<object>) => {
     document.querySelector(`#${id}`).innerHTML = `${data.length}`
 }
 
