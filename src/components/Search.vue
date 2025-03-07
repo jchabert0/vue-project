@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { checkCategory } from '@/functions/checkCategfory';
 import { getProducts } from '@/functions/getProducts';
 import { getResult } from '@/functions/getResult';
 import { noResults } from '@/functions/noResults';
