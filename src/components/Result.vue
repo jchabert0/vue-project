@@ -5,7 +5,7 @@ defineProps<{
 </script>
 
 <template>
-    <h3><span :id="id">0</span>résultat(s)</h3>
+    <h3><span :id="id">0</span>result(s)</h3>
 </template>
 
 <style scoped>

@@ -32,7 +32,7 @@ const search = (id: string) => {
 
 <template>
     <form>
-        <label :for="name">Rechercher par nom:</label>
+        <label :for="name">Search by name:</label>
         <input :type="type" :id="name" :name="name" :class="class" @input="search(name)" />
     </form>
 </template>

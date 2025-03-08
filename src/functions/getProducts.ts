@@ -49,7 +49,7 @@ export const getProducts = (data: Array<object>) => {
                 <h3>${product.price}€</h3>
                 <h4>${product.title}</h4>
       <p>${product.description}</p>
-      <button class="secondary getOrder" data-id="${product.id}">Ajouter au panier</button>
+      <button class="secondary getOrder" data-id="${product.id}">Add to cart</button>
   </div>
     </div>
     </div>

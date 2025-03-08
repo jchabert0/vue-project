@@ -39,13 +39,13 @@ const select = (id: string) => {
 
 <template>
     <form>
-        <label :for="id">Trier par: </label>
+        <label :for="id">Sort by: </label>
         <select :name="id" :id="id" @change="select(id)">
             <option value="default">Default</option>
-            <option value="publication">Date de parution</option>
-            <option value="update">Date de mise à jour</option>
-            <option value="ascending">Prix croissant</option>
-            <option value="descending">Prix décroissant</option>
+            <option value="publication">Release date</option>
+            <option value="update">Update date</option>
+            <option value="ascending">Ascending price</option>
+            <option value="descending">Price descending</option>
         </select>
     </form>
 </template>

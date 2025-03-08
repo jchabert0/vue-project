@@ -51,7 +51,7 @@ const write = (id: string) => {
 
 <template>
     <form>
-        <label :for="name">Rechercher par prix maximum:</label>
+        <label :for="name">Search by price max:</label>
         <input :type="type" :id="name" :name="name" :class="class" @change="prices(name)" @input="write(name)" />
         <span :id="id"></span>
     </form>

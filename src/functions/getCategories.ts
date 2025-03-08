@@ -15,7 +15,7 @@ export const getCategories = (data: Array<object>) => {
     `
 }).join('')}
 <button class="secondary" data-btn="open-modal" data-modal="order">
-            My Order
+            My Cart
         </button>
         <div class="modal" id="modal-order">
     <button data-btn="modal-close" class="modal-close">
@@ -23,13 +23,13 @@ export const getCategories = (data: Array<object>) => {
     </button>
     <div>
     <h2>My Order</h2>
-    <div id="order">Aucun article :(</div>
+    <div id="order">No result :(</div>
   </div>
     </div>
     `
-    document.querySelectorAll('.category').forEach(button => {
+    document.querySelectorAll('.primary').forEach(button => {
         button.addEventListener('click', () => {
-            document.querySelectorAll('.category').forEach(button => {
+            document.querySelectorAll('.primary').forEach(button => {
                 button.classList.remove('active')                
             });
             button.classList.add('active')                
