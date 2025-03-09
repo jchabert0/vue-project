@@ -12,7 +12,7 @@ fetch('https://api.escuelajs.co/api/v1/products')
         return response.json();
     })
     .then((data) => {
-        console.log(data)
+        //console.log(data)
         getProducts(data)
         getResult('result', data)
     })
@@ -22,7 +22,7 @@ fetch('https://api.escuelajs.co/api/v1/products')
 </script>
 
 <template>
-    <aside>article ajouté<button>
+    <aside>Added to cart<button>
             <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24"
                 fill="var(--white-color)">
                 <path

@@ -68,4 +68,20 @@ header {
 header button {
     margin-right: 16px;
 }
+
+header button small {
+    position: absolute;
+    top: -7px;
+    right: -7px;
+    height: 14px;
+    width: 14px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--black-color);
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--white-color);
+}
 </style>

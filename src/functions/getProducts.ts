@@ -90,8 +90,10 @@ return `
 `
       }).join('')}
       `
+   document.querySelector('#order-length').innerHTML = getOrder.length
     })
    });
+
 
 
 /* Modal */
