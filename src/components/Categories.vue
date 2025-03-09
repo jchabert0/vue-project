@@ -77,7 +77,8 @@ header button small {
     width: 14px;
     border-style: solid;
     border-width: 1px;
-    border-color: var(--black-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color);
     border-radius: 100px;
     display: flex;
     align-items: center;

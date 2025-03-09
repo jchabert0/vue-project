@@ -30,7 +30,7 @@ export const getProducts = (data: Array<object>) => {
     <button data-btn="modal-close" class="modal-close">
     <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="var(--black-color)"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
     </button>
-    <div class="modal-content container ">
+    <div class="modal-content container">
 <div class="grid">
 <div class="col-12 col-lg-6">
         <div class="slider-wrapper" data-images="wrapper">
@@ -86,15 +86,29 @@ return `
 <h3>${order.title}</h3>
 <h4>${order.price}€</h4>
 </div>
+<button data-btn="order-delete">delete</button>
 </div>
 `
       }).join('')}
       `
    document.querySelector('#order-length').innerHTML = getOrder.length
+   let totalPrices = []
+   getOrder.map((order) => {
+    totalPrices.push(order.price)
+   })
+   const prices = totalPrices.reduce((partialSum, a) => partialSum + a, 0)
+   document.querySelector('#total').innerHTML = `${prices}€`
+
     })
    });
 
-
+      /* Order delete */
+document.querySelectorAll('[data-btn="order-delete"]').forEach(btn => {
+  console.log('getOrder')
+  btn.addEventListener('click', () => {
+    console.log('getOrder')
+  })
+});
 
 /* Modal */
 const modal = (() => {
@@ -131,6 +145,8 @@ btnClose.forEach(btn => {
     btnAside?.parentNode.classList.remove('active')
   })
 });
+
+
 
 /* Slider images */
 document.querySelectorAll('[data-images="wrapper"]')?.forEach(wrapper => {

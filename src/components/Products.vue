@@ -85,7 +85,7 @@ article.product .modal h3 {
     margin-bottom: 24px;
 }
 
-.order-content:not(:last-child) {
+.order-content {
     padding-bottom: 24px;
     margin-bottom: 24px;
     border-bottom-style: solid;
@@ -105,5 +105,19 @@ article.product .modal h3 {
     font-size: 16px;
     font-weight: 100;
     margin-bottom: 0;
+}
+
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.total span {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: var(--black-color);
+    font-weight: 900;
 }
 </style>

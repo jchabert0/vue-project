@@ -25,6 +25,7 @@ export const getCategories = (data: Array<object>) => {
     <div>
     <h2>My Order</h2>
     <div id="order">No result :(</div>
+    <div class="total"><h2>Total : </h2><span id="total">0€</span></div>
   </div>
     </div>
     `
@@ -36,6 +37,7 @@ export const getCategories = (data: Array<object>) => {
             button.classList.add('active')                
         })
     });
+
 }
 
 
