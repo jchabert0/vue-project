@@ -93,6 +93,12 @@ article.product .modal h3 {
     border-bottom-color: var(--system-color);
 }
 
+.order-content.deleted {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+}
+
 .order-content img {
     width: auto;
 }
@@ -111,6 +117,7 @@ article.product .modal h3 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-top: 24px;
 }
 
 .total span {

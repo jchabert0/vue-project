@@ -67,7 +67,7 @@ export const getProducts = (data: Array<object>) => {
 }
     `
 
-    /* Order */
+    /* Order Add */
    let getOrder = []
    document.querySelectorAll('.getOrder').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -85,8 +85,8 @@ return `
 <div class="order-content__title">
 <h3>${order.title}</h3>
 <h4>${order.price}€</h4>
+      <button class="secondary deleteOrder" data-id="${order.id}">delete to cart</button>
 </div>
-<button data-btn="order-delete">delete</button>
 </div>
 `
       }).join('')}
@@ -102,15 +102,25 @@ return `
     })
    });
 
-      /* Order delete */
-document.querySelectorAll('[data-btn="order-delete"]').forEach(btn => {
-  console.log('getOrder')
-  btn.addEventListener('click', () => {
-    console.log('getOrder')
-  })
-});
+/* Order Delete */
+document.querySelector('#cart')?.addEventListener('click', () => {
+  document.querySelectorAll('.deleteOrder').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const productID = Number(btn.dataset.id)
+      const OrderIndex = getOrder.findIndex(order=> order.id === productID);
+      getOrder.splice(OrderIndex, 1)
+      btn.parentNode?.parentNode.classList.add('deleted')
+   let totalPrices = []
+      getOrder.map((order) => {
+        totalPrices.push(order.price)
+       })
+       const prices = totalPrices.reduce((partialSum, a) => partialSum + a, 0)
+       document.querySelector('#total').innerHTML = `${prices}€`
+    })
+  });
+})
 
-/* Modal */
+      /* Modal */
 const modal = (() => {
   const open = document.querySelectorAll('[data-btn="open-modal"]')
   if(open.length !== 0 )
@@ -132,20 +142,18 @@ const modal = (() => {
   })
 })()
 
-   
-   /* Article Add */
-   const btnAside = document.querySelector('aside')?.querySelector('button')
-   btnAside?.addEventListener('click', () => {
-    btnAside?.parentNode.classList.remove('active')
-})
-
 const btnClose = document.querySelectorAll('[data-btn="modal-close"]')
 btnClose.forEach(btn => {
   btn.addEventListener('click', () => {
     btnAside?.parentNode.classList.remove('active')
   })
 });
-
+   
+   /* Article Added */
+   const btnAside = document.querySelector('aside')?.querySelector('button')
+   btnAside?.addEventListener('click', () => {
+    btnAside?.parentNode.classList.remove('active')
+})
 
 
 /* Slider images */

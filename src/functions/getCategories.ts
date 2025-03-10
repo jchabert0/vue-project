@@ -14,7 +14,7 @@ export const getCategories = (data: Array<object>) => {
         </button>
     `
 }).join('')}
-<button class="secondary" data-btn="open-modal" data-modal="order">
+<button class="secondary" data-btn="open-modal" data-modal="order" id="cart">
             My Cart
             <small id="order-length">0</small>
         </button>
