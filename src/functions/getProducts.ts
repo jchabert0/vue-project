@@ -145,18 +145,18 @@ const modal = (() => {
   })
 })()
 
+   /* Article Added */
+   const btnAside = document.querySelector('aside')?.querySelector('button')
+   btnAside?.addEventListener('click', () => {
+    btnAside?.parentNode.classList.remove('active')
+})
+
 const btnClose = document.querySelectorAll('[data-btn="modal-close"]')
 btnClose.forEach(btn => {
   btn.addEventListener('click', () => {
     btnAside?.parentNode.classList.remove('active')
   })
 });
-   
-   /* Article Added */
-   const btnAside = document.querySelector('aside')?.querySelector('button')
-   btnAside?.addEventListener('click', () => {
-    btnAside?.parentNode.classList.remove('active')
-})
 
 
 /* Slider images */
