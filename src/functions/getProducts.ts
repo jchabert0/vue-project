@@ -118,6 +118,7 @@ document.querySelector('#cart')?.addEventListener('click', () => {
        })
        const prices = totalPrices.reduce((partialSum, a) => partialSum + a, 0)
        document.querySelector('#total').innerHTML = `${prices}€`
+       document.querySelector('#order-length').innerHTML = getOrder.length
     })
   });
 })
